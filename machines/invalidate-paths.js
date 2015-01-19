@@ -34,6 +34,9 @@ module.exports = {
     invalidCredentials: {
       description: 'The security credentials specified as inputs are invalid.',
     },
+    unknownDistribution: {
+      description: 'The specified distribution does not exist.'
+    },
     success: {
       description: 'Done.'
     }
@@ -62,8 +65,12 @@ module.exports = {
     }, function(err, data) {
       if (err) {
         if (!_.isObject(err)) return exits.error(err);
+        console.log(err.code, err.type, err.name);
         if (err.code === 'InvalidClientTokenId') {
           return exits.invalidCredentials();
+        }
+        if (err.code === 'NoSuchDistribution') {
+          return exits.unknownDistribution();
         }
         return exits.error(err);
       }
