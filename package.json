@@ -22,6 +22,8 @@
   "machinepack": {
     "friendlyName": "Cloudfront",
     "machineDir": "machines/",
-    "machines": ["get-cloudfront-url"]
+    "machines": [
+      "sign-cloudfront-url"
+    ]
   }
 }
