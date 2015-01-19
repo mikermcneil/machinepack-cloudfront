@@ -1,6 +1,6 @@
 {
   "name": "machinepack-cloudfront",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Node.js wrapper for AWS CloudFront.",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha -b"
