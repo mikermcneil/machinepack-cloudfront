@@ -31,6 +31,9 @@ module.exports = {
     error: {
       description: 'Unexpected error occurred.'
     },
+    invalidCredentials: {
+      description: 'The security credentials specified as inputs are invalid.',
+    },
     success: {
       description: 'Done.'
     }
@@ -58,6 +61,10 @@ module.exports = {
       }
     }, function(err, data) {
       if (err) {
+        if (!_.isObject(err)) return exits.error(err);
+        if (err.code === 'InvalidClientTokenId') {
+          return exits.invalidCredentials();
+        }
         return exits.error(err);
       }
       return exits.success();
