@@ -4,12 +4,20 @@ module.exports = {
   extendedDescription: 'Use this machine when you want to delete objects from CloudFront, forcing it to pull fresh copies of those files from your origin server/bucket.',
   inputs: {
     accessKeyId: {
-      example: '...',
-      required: true
+      description: 'Your AWS access key id',
+      example: 'BJIBJB5SF3Z5QQDJFHHX',
+      required: true,
+      whereToGet: {
+        url: 'https://console.aws.amazon.com/iam/home#security_credential'
+      }
     },
     secretAccessKey: {
-      example: '... ',
-      required: true
+      description: 'Your AWS secret',
+      example: 'JOpq29vhaJ2VVae2jfkN/+z9/ulqRzd',
+      required: true,
+      whereToGet: {
+        url: 'https://console.aws.amazon.com/iam/home#security_credential'
+      }
     },
     region: {
       description: 'Your AWS region (defaults to "us-east-1")',
