@@ -10,11 +10,17 @@
     "machines",
     "machinepack"
   ],
-  "author": "",
+  "author": "Mike McNeil",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikermcneil/machinepack-cloudfront.git"
+  },
   "license": "MIT",
   "dependencies": {
     "machine": "^1.1.0",
-    "aws-cloudfront-sign": "^1.1.0"
+    "aws-cloudfront-sign": "^1.1.0",
+    "lodash": "^2.4.1",
+    "aws-sdk": "^2.1.6"
   },
   "devDependencies": {
     "mocha": "^2.1.0"
@@ -23,7 +29,8 @@
     "friendlyName": "Cloudfront",
     "machineDir": "machines/",
     "machines": [
-      "sign-cloudfront-url"
+      "sign-cloudfront-url",
+      "invalidate-paths"
     ]
   }
 }
