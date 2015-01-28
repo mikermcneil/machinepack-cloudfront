@@ -46,7 +46,7 @@ module.exports = {
       description: 'The specified distribution does not exist.'
     },
     success: {
-      description: 'Done.'
+      description: 'Done. The provided paths have been invalidated on CloudFront.'
     }
   },
   fn: function(inputs, exits) {
